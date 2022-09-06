@@ -29,3 +29,6 @@ hs_err_pid*
 
 # OTHERS
 out/
+
+# INCLUDE
+!JavaChess.jar
