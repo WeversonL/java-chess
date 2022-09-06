@@ -1,18 +1,19 @@
-package application;
+package main.java.application;
 
-import chess.ChessMatch;
-import chess.ChessPiece;
-import chess.ChessPosition;
+import main.java.chess.ChessMatch;
+import main.java.chess.ChessPiece;
+import main.java.chess.ChessPosition;
 
 import java.util.*;
 
-import static chess.Color.BLACK;
-import static chess.Color.WHITE;
 import static java.util.Objects.isNull;
+import static main.java.chess.Color.BLACK;
+import static main.java.chess.Color.WHITE;
 
 public class UserInterface {
 
-    private UserInterface() {}
+    private UserInterface() {
+    }
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_YELLOW = "\u001B[33m";
