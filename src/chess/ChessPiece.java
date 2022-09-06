@@ -8,23 +8,36 @@ import static java.util.Objects.nonNull;
 
 public abstract class ChessPiece extends Piece {
 
-    private Color color;
+	private final Color color;
+	private int moveCount;
 
-    public ChessPiece(Board board, Color color) {
-        super(board);
-        this.color = color;
-    }
+	protected ChessPiece(Board board, Color color) {
+		super(board);
+		this.color = color;
+	}
 
-    public Color getColor() {
-        return color;
-    }
+	public Color getColor() {
+		return color;
+	}
+	
+	public int getMoveCount() {
+		return moveCount;
+	}
+	
+	protected void increaseMoveCount() {
+		moveCount++;
+	}
 
-    protected boolean isThereOpponentPiece(Position position) {
+	protected void decreaseMoveCount() {
+		moveCount--;
+	}
 
-        ChessPiece pieceInPosition = (ChessPiece) getBoard().piece(position);
-
-        return nonNull(pieceInPosition) && pieceInPosition.getColor() != color;
-
-    }
-
+	public ChessPosition getChessPosition() {
+		return ChessPosition.fromPosition(position);
+	}
+	
+	protected boolean isThereOpponentPiece(Position position) {
+		ChessPiece chessPiece = (ChessPiece)getBoard().piece(position);
+		return nonNull(chessPiece) && chessPiece.getColor() != color;
+	}
 }

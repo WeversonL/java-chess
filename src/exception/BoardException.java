@@ -1,11 +1,8 @@
 package exception;
 
 public class BoardException extends RuntimeException {
-
-    private static final long serialVersionUID = 1L;
-
-    public BoardException(String message) {
-        super(message);
-    }
-
+	private static final long serialVersionUID = 6854487260014850809L;
+	public BoardException(String msg) {
+		super(msg);
+	}
 }
